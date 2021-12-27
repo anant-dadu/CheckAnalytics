@@ -15,7 +15,7 @@ a=os.path.dirname(st.__file__)+'/static/index.html'
 st.write(st.__file__)
 st.write(os.listdir(os.path.dirname(st.__file__)))
 st.write(os.listdir(os.path.dirname(st.__file__) + '/static'))
-
+st.write(os.listdir(os.path.dirname(st.__file__) + '/static/static'))
 with open(a, 'r') as f:
     data=f.read()
     st.write(data)
