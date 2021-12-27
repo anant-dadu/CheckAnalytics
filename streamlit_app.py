@@ -39,6 +39,23 @@ google_analytics_js = """
   
 </script>
     """
+google_analytics_js = """
+<!-- Default Statcounter code for My Testing Website
+https://share.streamlit.io/anant-dadu/checkanalytics -->
+<script type="text/javascript">
+var sc_project=12694448; 
+var sc_invisible=0; 
+var sc_security="d344aa44"; 
+var scJsHost = "https://";
+document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/12694448/0/d344aa44/0/" alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+"""
 st.components.v1.html(google_analytics_js)
 st.write("Hello How are you")
 if st.button("Click"):
