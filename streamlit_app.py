@@ -11,17 +11,17 @@ code = """<!-- Global site tag (gtag.js) - Google Analytics -->
   gtag('config', 'G-Q7XG1LL6VG');
 </script>"""
 import streamlit as st
-a=os.path.dirname(st.__file__)+'/static/index.html'
-with open(a, 'r') as f:
-    data=f.read()
+# a=os.path.dirname(st.__file__)+'/static/index.html'
+#with open(a, 'r') as f:
+#     data=f.read()
     # if len(re.findall('G-', data))==0:
-    if not 'G-' in data:
-        with open(a, 'w') as ff:
-            newdata=re.sub('<head>','<head>'+code,data)
-            ff.write(newdata)
+#    if not 'G-' in data:
+#        with open(a, 'w') as ff:
+#            newdata=re.sub('<head>','<head>'+code,data)
+#            ff.write(newdata)
             
 
-st.write(data)
+# st.write(data)
 st.write(st.__file__)
 st.write(os.listdir(os.path.dirname(st.__file__)))
 st.write(os.listdir(os.path.dirname(st.__file__) + '/static'))
@@ -35,19 +35,10 @@ google_analytics_js = """
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); // Note: https protocol here
-
-  
-  gtag('config', 'G-Q7XG1LL6VG', {'cookieDomain': 'none', 'send_page_view': false, 'checkProtocolTask':  function(){} });
-  
+  gtag('config', 'G-Q7XG1LL6VG', {'cookieDomain': 'none', 'checkProtocolTask':  null });
   
 </script>
     """
-# gtag('set', {'checkProtocolTask': 'none' });
 st.components.v1.html(google_analytics_js)
 st.write("Hello How are you")
 if st.button("Click"):
