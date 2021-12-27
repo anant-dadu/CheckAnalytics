@@ -36,7 +36,13 @@ google_analytics_js = """
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   
-  gtag('config', 'G-Q7XG1LL6VG', {'cookieDomain': 'none', 'checkProtocolTask':  function(){ /* nothing */ } });
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); // Note: https protocol here
+
+  
+  gtag('config', 'G-Q7XG1LL6VG', {'cookieDomain': 'none', 'send_page_view': false, 'checkProtocolTask':  function(){} });
   
   
 </script>
