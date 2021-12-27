@@ -37,7 +37,7 @@ google_analytics_js = """
   gtag('js', new Date());
 
   gtag('config', 'G-Q7XG1LL6VG', {'cookieDomain': 'none'});
-  gtag('set', 'checkProtocolTask', function(){ /* nothing */ });
+  gtag('set', {'checkProtocolTask': function(){ /* nothing */ } });
   
 </script>
     """
