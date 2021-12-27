@@ -28,8 +28,18 @@ st.write(os.listdir(os.path.dirname(st.__file__) + '/static'))
 st.write(os.listdir(os.path.dirname(st.__file__) + '/static/static'))
 
             
-            
-            
+google_analytics_js = """
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7XG1LL6VG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q7XG1LL6VG');
+</script>
+    """
+st.components.v1.html(google_analytics_js)
 st.write("Hello How are you")
 if st.button("Click"):
   st.write("Welcome")
