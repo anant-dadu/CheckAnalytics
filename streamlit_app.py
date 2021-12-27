@@ -35,9 +35,9 @@ google_analytics_js = """
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
+  gtag('set', {'checkProtocolTask': 'none' });
   gtag('config', 'G-Q7XG1LL6VG', {'cookieDomain': 'none'});
-  gtag('set', {'checkProtocolTask': function(){ /* nothing */ } });
+  
   
 </script>
     """
