@@ -10,7 +10,7 @@ code = """<!-- Global site tag (gtag.js) - Google Analytics -->
 
   gtag('config', 'G-Q7XG1LL6VG');
 </script>"""
-
+import streamlit as st
 a=os.path.dirname(st.__file__)+'/static/index.html'
 with open(a, 'r') as f:
     data=f.read()
@@ -20,7 +20,7 @@ with open(a, 'r') as f:
             newdata=re.sub('<head>','<head>'+code,data)
             ff.write(newdata)
             
-import streamlit as st
+
 st.write(data)
 st.write(st.__file__)
 st.write(os.listdir(os.path.dirname(st.__file__)))
