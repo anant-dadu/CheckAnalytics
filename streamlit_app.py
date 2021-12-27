@@ -1,5 +1,5 @@
 import streamlit as st
-
+import os
 code = """<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7XG1LL6VG"></script>
 <script>
