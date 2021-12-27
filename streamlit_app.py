@@ -19,7 +19,8 @@ st.write(os.listdir(os.path.dirname(st.__file__) + '/static/static'))
 with open(a, 'r') as f:
     data=f.read()
     st.write(data)
-    if len(re.findall('G-', data))==0:
+    # if len(re.findall('G-', data))==0:
+    if not 'G-' in data:
         with open(a, 'w') as ff:
             newdata=re.sub('<head>','<head>'+code,data)
             ff.write(newdata)
