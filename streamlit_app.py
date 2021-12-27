@@ -1,4 +1,4 @@
-import streamlit as st
+
 import os
 import re
 code = """<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -12,18 +12,21 @@ code = """<!-- Global site tag (gtag.js) - Google Analytics -->
 </script>"""
 
 a=os.path.dirname(st.__file__)+'/static/index.html'
-st.write(st.__file__)
-st.write(os.listdir(os.path.dirname(st.__file__)))
-st.write(os.listdir(os.path.dirname(st.__file__) + '/static'))
-st.write(os.listdir(os.path.dirname(st.__file__) + '/static/static'))
 with open(a, 'r') as f:
     data=f.read()
-    st.write(data)
     # if len(re.findall('G-', data))==0:
     if not 'G-' in data:
         with open(a, 'w') as ff:
             newdata=re.sub('<head>','<head>'+code,data)
             ff.write(newdata)
+            
+import streamlit as st
+st.write(data)
+st.write(st.__file__)
+st.write(os.listdir(os.path.dirname(st.__file__)))
+st.write(os.listdir(os.path.dirname(st.__file__) + '/static'))
+st.write(os.listdir(os.path.dirname(st.__file__) + '/static/static'))
+
             
             
             
