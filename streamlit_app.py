@@ -12,7 +12,7 @@ code = """<!-- Global site tag (gtag.js) - Google Analytics -->
 </script>"""
 
 a=os.path.dirname(st.__file__)+'/static/index.html'
-
+st.write(st.__file__)
 with open(a, 'r') as f:
     data=f.read()
     st.write(data)
