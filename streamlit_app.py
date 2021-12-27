@@ -35,12 +35,13 @@ google_analytics_js = """
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('set', {'checkProtocolTask': 'none' });
-  gtag('config', 'G-Q7XG1LL6VG', {'cookieDomain': 'none'});
+  
+  gtag('config', 'G-Q7XG1LL6VG', {'cookieDomain': 'none', {'checkProtocolTask': 'none' }});
   
   
 </script>
     """
+# gtag('set', {'checkProtocolTask': 'none' });
 st.components.v1.html(google_analytics_js)
 st.write("Hello How are you")
 if st.button("Click"):
